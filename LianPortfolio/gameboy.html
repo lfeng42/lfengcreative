@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="icon" href="img/faviconclear.png">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Lian Feng</title>
+      <!-- Css -->
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <link rel="stylesheet" href="form.css" >
+      <script src="form.js"></script>
+
+   </head>
+   <body>
+      <nav class="navbar navbar-default color-fill navbar-fixed-top">
+         <div class="col-md-12">
+            <div class="nav">
+               <button class="btn-nav">
+               <span class="icon-bar top"></span>
+               <span class="icon-bar middle"></span>
+               <span class="icon-bar bottom"></span>
+               </button>
+            </div>
+            <a class="navbar-brand" href="index.html">
+            <img class="logo" src="img/logo.png" alt="logo">
+            </a>
+            <div class="nav-content hideNav hidden">
+               <ul class="nav-list vcenter">
+                  <li class="nav-item"><a class="item-anchor" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="item-anchor" href="resume.html">Resume</a></li>
+                  <li class="nav-item"><a class="item-anchor" href="portfolio.html">Portfolio</a></li>
+                  <li class="nav-item"><a class="item-anchor" href="about.html">About Me</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <section>
+              <div class="col-md-1">
+                <div class="navarrow">
+                 <a href="portfolio.html"><img src="img/prevdark.png" alt="Back Arrow" style="width:30px;height:41px;"></a>
+               </div>
+              </div>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12" style="padding:75px;">
+                    <center>
+                    <h1>
+                      Mom's Almost Home!
+                    </h1>
+                    <br>
+                    <img alt="Summer Session" src="img/gameboy.png" style= "width:400px;height:400px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <br>
+                    <br>
+                    <br>
+                    <h2>
+                    Background
+                    </h2>
+                    </center>
+                    <p> At Georgia Tech, I took a course called "Media Device and Architecture" in which we learned how to program in low-level C by creating GameBoy games and get a taste of what assembly level programming was like. Through our assignments, we learned how to connect hardware and software worked together by using C code to manipulate device hardware. We were also introduced to basic game programming methods and game design techniques. We learned how to use the program Usenti to turn sprite images into bitmaps that could then be used in GameBoy games by indexing the pixels in the images.
+                    </p>
+                    <br>
+                    <hr align="center" width="100%">
+                    <br>
+                    <h2><center>
+                    Task
+                    </center></h2>
+                    <p> For our final project, we were tasked with creating a GameBoy game in C using what we had learned in class. There were no limitiations as to what kind of gameplay was necessary or how the game looked, but it had to have the following components in the game:
+                    <br>
+                    <br>
+                    <ul>
+                        <li>At least 2 animated sprites</li>
+                        <li>1 tiled background larger than 512x512 pixels</li>
+                        <li>Win/Lose state screens</li>
+                        <li>Splash screen with menu and instructions</li>
+                        <li>Ability to pause the game</li>
+                        <li>2 sounds that play at the same time, 1 sound that loops</li>
+                        <li>Cheat to make the game faster to finish (not just skipping to Win state</li>
+                    </ul>
+                    </p>
+                    <br>
+                    <hr align="center" width="100%">
+                    <br>
+                    <h2><center>
+                    Process
+                    </center></h2>
+                    <p> I brainstormed many ideas, but at the end I decided to go with a basic game that centered around a boy who had to clean up his house before his mom arrived home. 
+                    <br>
+                    <br>
+                    <h4>Gameplay Overview and Brainstorm</h4>
+                    <br>
+                    <font color = "da9d06"><b>Description:</b></font> <p>You move around with arrow keys to pick up trash around the house. If you accidentally collide with a vase, you have to return it to the nearest shelf before you can collect any other trash so you don't accidentally break it. If you run into a dog, the timer decreases by 5 seconds. There's a timer counting down so you have to make sure you collect all trash before mom comes home!</p>
+                    <br>
+                    <font color = "da9d06"><b>Win state:</b></font> <p>Collect all the trash before the timer runs out (60 seconds) and mom comes home.</p>
+                    <br>
+                    <font color = "da9d06"><b>Lose state:</b></font> <p>You don't collect all the trash before the time runs out (60 seconds) and mom comes home.</p>
+                    <br>
+                    <font color = "da9d06"><b>Collisions:</b></font> <p>If a player collides into a piece of trash, it "picks" it up. Colliding into a vase forces you to collide with a shelf to place it on the shelf. Character turns red if it's currently holding a vase.</p>
+                    <br>
+                    <font color = "da9d06"><b>Controls:</b></font>
+                    <ul>
+                        <li><font color = "black"><b>Up:</b></font> Player moves in the up direction</li>
+                        <li><font color = "black"><b>Down:</b></font> Player moves in the down direction</li>
+                        <li><font color = "black"><b>Left:</b></font> Player moves in the left direction</li>
+                        <li><font color = "black"><b>Right:</b></font> Player moves in the right direction</li>
+                        <li><font color = "black"><b>Start:</b></font> Pause game, see pause menu that allows you to restart game or return to main menu.</li>
+                    </ul>
+                    </p>
+                    <br>
+                    <font color = "da9d06"><b>Audio:</b></font>
+                    <ul>
+                        <li><font color = "black"><b>Opening Music:</b></font> Chugging, bouncy music</li>
+                        <li><font color = "black"><b>Collecting Trash:</b></font> Shuffling sound</li>
+                        <li><font color = "black"><b>Bumping into Dog:</b></font> Barking sound</li>
+                        <li><font color = "black"><b>Background:</b></font> Happy bumbling music</li>
+                    </ul>
+                    <br>
+                    <p>I also sketched a few priliminary sketches to get a better visualize how the game layout would appear in real life.</p>
+                    <div class="row">
+                          <div class="column">
+                              <div style="width:100%;font-size:12px;padding-top:5px;">
+                                <img src="img/gameimg1.png" alt="Game Sketch 1" style="width:100%">Shows the basic game layout. Black rectangles are doorways that lead to other rooms in the house. Grey splotches are the trash the player has to pick up. The pink vase is that if they collide with, must be taken to the green rectangle (the shelf) before they can pick up other pieces of trash. The bed is something they can't walk through so it's a barrier. If they collide with the dog, then the timer goes down.
+                              </div>
+                          </div>
+                          <div class="column">
+                            <div style="width:100%;font-size:12px;padding-top:5px;">
+                              <img src="img/gameimg2.png" alt="Game Sketch 2" style="width:100%">Shows the game in the case a vase is collided with. The character turns red and the player cannot pick u any more trash until the player is in contact with the shelf. Shelves will not be in every room to increase difficult for the player.
+                            </div>
+                          </div>
+                        </div>
+                    <br>
+                    <p>
+                    For my "cheat" state, I ended up adding two controls in which when you <font color="black"><b>Press A</b></font> to move fast in a run and <img src="img/invincible.png" class="responsive" style="float:right;width:100px;height:auto;padding:2.5%;"alt="Invincible"><font color="black"><b>Press L</b></font> while moving to run through vases and dogs without any repercussions.When the L is pressed, the character is surrounded by a yellow flame to indicate they are invinsible.
+                  </p>
+                    <br>
+                    <br>
+                    <h4>Implementation</h4>
+                    <p>
+                     I drew all the graphics, screens, and sprites using Usenti's paint feature and I created a sprite sheet bitmap. In addition, to make collisions for the furniture and walls on the map to prevent the player from being able to walk through them, I created a collision map in Usenti as well. 
+                     <img src="img/spritesheet.png" alt="Sprite Sheet" style="width:100%;padding:20px;"> 
+                     State machines were also important to the basis of my game code because it made it easy to transition from screen to screen. It was more organized in the code and most efficient to implement.
+                     </p> 
+                    <br>
+                    <hr align="center" width="100%">
+                    <br>
+                    <h2><center>
+                    Final Product
+                    </center></h2>
+                    <p> 
+                    For the look of the game, I went with a simple 8-bit appearance to mimic the old school, retro appearance that many games of the GameBoy time had.
+                    <br>
+                    <br>
+                    The following video is an example of the game play and the final version that I submitted for class. The first playthrough shows a scenario in which the player loses. They run into dogs, lose time, and are forced to waste more time returning vases. The second playthrough shows the player using the running and invincible cheats to win the game.
+                    <br>
+                    <br>
+                    <center><video width="500" controls>
+                        <source src="img/gameboyrecording.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video></center>
+                    <br>
+                    <p>You can take a closer look at the code and art right <a href="https://github.com/lfeng42/moms-home"><u><i>here</i></u></a>
+
+                    <br>
+                    <hr align="center" width="100%">
+                    <br>
+                    <h2><center>
+                    Reflection
+                    </center></h2>
+                    <p>Taking this class gave me my first exposure to how hardware and software connected together. In addition, although it was not the intention of the course, game design and programming were what I felt I gained the most from the course itself. Working on this GameBoy project gave me a glimpse into the effort it takes into making games, and I truly respect the effort game makers put into their products.</p>
+                    <br>
+                    <h4>Lessons Learned</h4>
+                    <br>
+                    <ul>
+                        <li><font color = "da9d06"><b>Making user experiences for games is much different from other mediums.</b></font></li>
+                          <ul style="list-style-type:none">
+                              <li>User experiences on digital platforms like websites or mobile apps usually only involve the visuals. However, with games, there are other components that go into making a good game experience. For example, there's the abstract component of whether it is "fun" or not. Is it challenging enough that people will be invested to play it? Is the gameplay interesting enough to the users? There are also other factors that go into the user experience like the intuitiveness of the many controls in the GameBoy and the atmosphere that the sound (or the lack of it) makes in the experience. </li>
+                            </ul> 
+                        <br>                  
+                      </ul> 
+                    </p>
+                    <br>
+                    <h4>If I could do this all again...</h4>
+                    <br>
+                    <p>If I could do this again, I would make the graphics much more detailed and give them dimension. I was unfamiliar with drawing in 8-bit, pixel art because it was my first time working with Usenti. The text when drawn in with Usenti was difficult to read because it was so pixelated and blocky, and the art did not have the detail that I wanted. I was more focused on programming the backend of the project that I dedicated less time to the graphics. Next time, I would like to play around with using Photoshop to create more detailed graphics and import them into Usenti to create a more aesthetically pleasing experience.</p>
+                    <br>
+                    
+                  </div>
+                </div>
+                  </div>
+                  </div>
+
+      </section>
+      <!-- script -->
+      <script src="js/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/modernizr.js"></script>
+      <script src="js/script.js"></script>
+   </body>
+</html>
